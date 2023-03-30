@@ -8,7 +8,15 @@ import { links } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
 const Sidebar = () => {
-    const { activeMenu, setActiveMenu } = useStateContext();
+    const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+
+    const handleCloseSideBar = () => {
+        if (activeMenu && screenSize <= 900) {
+            setActiveMenu(false)
+        }
+        // 当切换时检查
+    }
+
     const activeLinkClass = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 round-lg text-white text-md m-2'
     const normalLinkClass = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 round-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2'
 
@@ -24,15 +32,14 @@ const Sidebar = () => {
                     >
                         <SiShopware /> <span>Plasma</span>
                     </Link>
-                    <TooltipComponent center='Menu' position='BottomCenter'>
+                    <TooltipComponent content='Menu' position='BottomCenter'>
                         <button
                             type='button'
                             onClick={() => setActiveMenu(prevActiveMenu =>
                                 !prevActiveMenu
                             )}
                             className='text-xl rounded-full p-3 hover:bg-light-gray mt-4 block xl:hidden'>
-                            <MdOutlineCancel
-                            />
+                            <MdOutlineCancel />
                         </button>
                     </TooltipComponent>
                 </div>
@@ -46,7 +53,7 @@ const Sidebar = () => {
                                 <NavLink
                                     to={`/${link.name}`}
                                     key={link.name}
-                                    onClick={() => { }}
+                                    onClick={() => handleCloseSideBar()}
                                     className={({ isActive }) => {
                                         return isActive ? activeLinkClass : normalLinkClass
                                     }}

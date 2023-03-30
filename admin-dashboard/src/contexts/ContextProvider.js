@@ -5,19 +5,32 @@ const StateContext = createContext();
 const initialState = {
     chat: false,
     cart: false,
-    useProfile: File,
+    userProfile: false,
     notification: false
 }
 
 export const ContextProvider = ({ children }) => {
     const [activeMenu, setActiveMenu] = useState(true);
+    const [isClicked, setIsClicked] = useState(initialState);
+
+    const [screenSize, setScreenSize] = useState(undefined);
+
+    const handleClick = (clicked) => {
+        setIsClicked({ ...initialState, [clicked]: true })
+    }
+
 
     return (
         <StateContext.Provider
             value={{
                 activeMenu: activeMenu,
-                setActiveMenu
+                setActiveMenu,
                 // 传入的名字一样可以省略
+                isClicked,
+                setIsClicked,
+                handleClick,
+                screenSize,
+                setScreenSize
             }}
         >
             {children}
