@@ -7,6 +7,7 @@ import { useStateContext } from '../contexts/ContextProvider'
 
 
 const Ecommerce = () => {
+    const { currentColor } = useStateContext();
     return (
         <div className='mt-12 '>
             <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -21,7 +22,7 @@ const Ecommerce = () => {
                         <div className='mt-6'>
                             <Button
                                 color='white'
-                                bgColor='blue'
+                                bgColor={currentColor}
                                 text='DownLoad'
                                 borderRadius='10px'
                                 size='md'
@@ -95,13 +96,13 @@ const Ecommerce = () => {
                             </div>
                             <div className='mt-5'>
                                 <SparkLine
-                                    currentColor='blue'
+                                    currentColor={currentColor}
                                     id='line-sparkline'
                                     type='Line'
                                     height='80px'
                                     width='200px'
                                     data={SparklineAreaData}
-                                    color='blue'
+                                    color={currentColor}
                                 // 这个地方用函数式组件会报错，
                                 // 原因可能是这个组件不允许输入的变动，在响应式动作中导致报错，所以只能继承pureComponent
                                 // 也就是不允许二次渲染，可能与data没写死有关
@@ -110,11 +111,15 @@ const Ecommerce = () => {
                             <div className='mt-10'>
                                 <Button
                                     color='white'
-                                    bgColor='blue'
+                                    bgColor={currentColor}
                                     text='Download Report'
                                     borderRadius='10px'
                                 />
                             </div>
+                        </div>
+                        {/* 右侧柱状图 */}
+                        <div>
+                            <Stacked width='320px' height='360px' />
                         </div>
                     </div>
 

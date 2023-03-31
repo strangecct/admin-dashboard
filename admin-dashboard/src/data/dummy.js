@@ -3224,7 +3224,7 @@ export const stackedChartData = [
 export const stackedCustomSeries = [
 
   {
-    dataSource: stackedChartData[0],
+    dataSource: stackedChartData[0],//数据源
     xName: 'x',
     yName: 'y',
     name: 'Budget',
