@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components'
+import { Navbar,  Sidebar, ThemeSettings } from './components'
 import {
   Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers,
   Kanban, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor, Line
@@ -28,7 +28,7 @@ const App = () => {
                 type='button'
                 className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white'
                 style={{ backgroundColor: currentColor, borderRadius: '50%' }}
-                onClick={() => setThemeSettings(true)}
+                  onClick={() => setThemeSettings(true)}
               >
 
                 <FiSettings />
