@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FiSettings } from 'react-icons/fi'
 import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import ColorDetails from './pages/Charts/ColorComponents/ColorDetails'
-import { Navbar, Footer, Sidebar, ThemeSettings } from './components'
+import { Navbar, Footer, Sidebar, ThemeSettings, Login } from './components'
 
 import {
   Ecommerce,
@@ -16,7 +16,7 @@ import {
   Kanban,
   Area,
   Pie,
-  Financial,
+  Project,
   ColorPicker,
   ColorMapping,
   Editor,
@@ -29,6 +29,9 @@ import { useStateContext } from './contexts/ContextProvider'
 import './App.css'
 //import BlackBoard from './pages/Charts/BlackBoard'
 
+const loginContext = React.createContext(false)
+
+
 const App = () => {
   const {
     activeMenu,
@@ -37,10 +40,14 @@ const App = () => {
     currentMode,
     currentColor,
   } = useStateContext()
-
+  const [isLogin, setLogin] = useState(false)
   return (
-    <div className={currentMode === 'Dark' ? 'dark' : ''}>
+    <loginContext.Provider value={isLogin}>
       <BrowserRouter>
+        {/*<Routes>
+            <Route path="/login" element={<Login />} />
+          </Routes>*/}
+        <div className={currentMode === 'Dark' ? 'dark' : ''}></div>
         <div className="flex relative dark:bg-main-dark-bg">
           {/* 右下角设置 */}
           <div
@@ -74,7 +81,7 @@ const App = () => {
           {/* Navigation对应的显示区 */}
           <div
             className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full
-          ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}
+        ${activeMenu ? 'md:ml-72 ' : 'flex-2'}`}
           >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
               <Navbar />
@@ -83,11 +90,16 @@ const App = () => {
             <div>
               {themeSettings && <ThemeSettings />}
               <Routes>
+
                 {/* Dashboard */}
                 <Route path="/" element={<Summary />} />
                 <Route
                   path="/ecommerce"
                   element={<Ecommerce />}
+                />
+                <Route
+                  path="/sdu"
+                  element={<Summary />}
                 />
                 {/* Pages */}
                 <Route path="/orders" element={<Orders />} />
@@ -120,8 +132,8 @@ const App = () => {
                 />
                 <Route path="/blackboard" element={<BlackBoard />} />
                 <Route
-                  path="/financial"
-                  element={<Financial />}
+                  path="/projects"
+                  element={<Project />}
                 />
                 <Route
                   path="/color-mapping"
@@ -137,8 +149,13 @@ const App = () => {
             </div>
           </div>
         </div>
-      </BrowserRouter>
-    </div>
+
+      </BrowserRouter >
+
+    </loginContext.Provider>
+
+
+
   )
 }
 

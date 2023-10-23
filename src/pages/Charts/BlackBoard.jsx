@@ -16,6 +16,7 @@ const BlackBoard = () => {
       <Header category="blackboard" title="绘画黑板" />
       <canvas id="canvas"></canvas>
     </div>
+    //<div></div>
   )
 }
 

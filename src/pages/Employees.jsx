@@ -10,6 +10,7 @@ const Employees = () => {
     return (
         <div className='m-2 md:m-10 p-2 md:p-10 bg-white round-3xl'>
             <Header category='Page' title='Employees' />
+            <p className='text-2xl font-semibold mt-2 mb-4 text-gray-300'>render with grid component of syncfusion</p>
             <GridComponent
                 dataSource={employeesData}
                 allowPaging

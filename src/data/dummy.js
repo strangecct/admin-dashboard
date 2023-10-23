@@ -1,11 +1,5 @@
 import React from "react";
-import {
-    AiOutlineCalendar,
-    AiOutlineShoppingCart,
-    AiOutlineAreaChart,
-    AiOutlineBarChart,
-    AiOutlineStock,
-} from "react-icons/ai";
+
 import {
     FiShoppingBag,
     FiEdit,
@@ -506,95 +500,6 @@ export const employeesGrid = [
     },
 ];
 
-export const links = [
-    {
-        title: "Dashboard",
-        links: [
-            {
-                name: "ecommerce",
-                icon: <FiShoppingBag />,
-            },
-        ],
-    },
-
-    {
-        title: "Pages",
-        links: [
-            {
-                name: "orders",
-                icon: <AiOutlineShoppingCart />,
-            },
-            {
-                name: "employees",
-                icon: <IoMdContacts />,
-            },
-            {
-                name: "customers",
-                icon: <RiContactsLine />,
-            },
-        ],
-    },
-    {
-        title: "Apps",
-        links: [
-            {
-                name: "calendar",
-                icon: <AiOutlineCalendar />,
-            },
-            {
-                name: "kanban",
-                icon: <BsKanban />,
-            },
-            {
-                name: "editor",
-                icon: <FiEdit />,
-            },
-            {
-                name: "color-picker",
-                icon: <BiColorFill />,
-            },
-        ],
-    },
-    {
-        title: "Funcs",
-        links: [
-            {
-                name: "line",
-                icon: <AiOutlineStock />,
-            },
-            {
-                name: "area",
-                icon: <AiOutlineAreaChart />,
-            },
-
-            {
-                name: "colorApp",
-                icon: <FiPieChart />,
-            },
-            // 动态路由组件
-            {
-                name: "blackboard",
-                icon: <AiOutlineBarChart />,
-            },
-            {
-                name: "financial",
-                icon: <RiStockLine />,
-            },
-            {
-                name: "color-mapping",
-                icon: <BsBarChart />,
-            },
-            {
-                name: "pyramid",
-                icon: <GiLouvrePyramid />,
-            },
-            {
-                name: "stacked",
-                icon: <AiOutlineBarChart />,
-            },
-        ],
-    },
-];
 
 export const cartData = [
     {

@@ -57,8 +57,18 @@ const Summary = () => {
               <span className="wrap">{text}</span>
             </span>
           </h2>
-          <div className='mt-10'>校园经历：英语六级，本科成绩前 20%，获得一次二等奖学金、两次三等奖学金，
-            完成过自制耳机功放，基于stm32 的智能车、机器人，智能家居等硬件项目</div>
+          <div className='mt-10'>
+            团队发展目标是以放电等离子体活性粒子性质及其在生物医学应用研究为核心方向，
+            尤其是等离子活化水及活化油的生物医学应用价值，开展与需求院所和机构的深度合作，
+            回应需求指标，目的为开发出成型稳定的医、农用放电等离子体实用设备，比如杀菌灭毒等离子体活化水、等离子体农作物保鲜仪、
+            医用抗氧化抗癌活化磷虾油等。团队的长远科研路线特色是以扎实的放电等离子体基础理论研究为发展主阵地，
+            将细致的模拟计算结合精准的实验技术转化为核心竞争点，立足于国际低温放电等离子体基础研究行业；
+            积极拓展更多领域的交叉学科融合，以工业需求为导向，发展出适配生物医学、环境、
+            材料和能源等学科的高效放电等离子应实用技术。
+            团队发表SCI论文70余篇，封面文章一篇，授权发明专利与软件著作权30余项。
+            承担国家自然科学基金等国家级项、省部级项目10余项。获得省优秀博士论文、省优秀硕士论文多篇。
+            在“大气压等离子体活性粒子的产生极其与生物组织相互作用的理论研究”方面已经初步完成一系列创新性的研究成果。
+          </div>
           <button onClick={() => console.log('connect')}>
             Connect the world
             {/*<ArrowRightCircle size={25} />*/}
@@ -71,26 +81,6 @@ const Summary = () => {
         </div>
       </div>
       <div className='flex flex-wrap lg:flex-nowrap justify-center'>
-        <div className='bg-white dark:bg-secondary-dark-bg h-44  dark:text-gray-200 round-2xl
-                    w-full lg:w-80 p-8 pt-9 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
-          {/* 第一个方块 */}
-          <div className=' flex justify-between items-center'>
-            <div>
-              <p className='font-bold text-gray-400'>Earnings</p>
-              <p className='text-2xl'>￥9999</p>
-            </div>
-            <div className='mt-6'>
-              <Button
-                color='white'
-                bgColor={currentColor}
-                text='DownLoad'
-                borderRadius='10px'
-                size='md'
-              />
-            </div>
-          </div>
-
-        </div>
         {/* 小盒子flex换行 */}
         <div className='flex flex-wrap justify-center gap-1 items-center'>
           {earningData.map(item => (
