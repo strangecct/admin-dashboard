@@ -8,7 +8,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups'
 import { Modal, message } from 'antd';
 
 
-import quincy from '../data/quincy.jpg'
+import qinzhe from '../data/avatar/qinzhe.jpg'
 
 import { Cart, Chat, Notification, UserProfile, Login } from '../components'
 import { useStateContext } from '../contexts/ContextProvider'
@@ -139,7 +139,7 @@ const Navbar = () => {
             }}
           >
             <div className='rounded-full w-8 h-8 relative overflow-hidden' >
-              <img src={quincy} alt="user" />
+              <img src={qinzhe} alt="user" />
             </div>
             <p>
               <span className='text-gray-400 text-14'>Hi,</span> {' '}

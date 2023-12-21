@@ -7,7 +7,6 @@ import { Navbar, Footer, Sidebar, ThemeSettings, Login } from './components'
 
 import {
   Ecommerce,
-  Orders,
   Calendar,
   Employees,
   Stacked,
@@ -69,15 +68,12 @@ const App = () => {
             </TooltipComponent>
           </div>
           {/* SideBar */}
-          {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+          {
+            <div className={activeMenu ?
+              "w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white"
+              : "w-0 dark:bg-secondary-dark-bg"}>
               <Sidebar />
-            </div>
-          ) : (
-            <div className="w-0 dark:bg-secondary-dark-bg">
-              <Sidebar />
-            </div>
-          )}
+            </div>}
           {/* Navigation对应的显示区 */}
           <div
             className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full
@@ -90,72 +86,36 @@ const App = () => {
             <div>
               {themeSettings && <ThemeSettings />}
               <Routes>
-
-                {/* Dashboard */}
                 <Route path="/" element={<Summary />} />
-                <Route
-                  path="/ecommerce"
-                  element={<Ecommerce />}
-                />
-                <Route
-                  path="/sdu"
-                  element={<Summary />}
-                />
-                {/* Pages */}
-                <Route path="/orders" element={<Orders />} />
-                <Route
-                  path="/employees"
-                  element={<Employees />}
-                />
-                <Route
-                  path="/customers"
-                  element={<Customers />}
-                />
-                {/* Apps */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route
-                  path="/calendar"
-                  element={<Calendar />}
-                />
-                <Route
-                  path="/color-picker"
-                  element={<ColorPicker />}
-                />
+                <Route path="/sdu" element={<Summary />} />
+                <Route path="/timeline" element={<ColorPicker />} />
+
+                <Route path="/battery" element={<Kanban />} />
+                <Route path="/gpt" element={<Editor />} />
+                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/dashboard" element={<Ecommerce />} />
 
                 {/* Funcs */}
-                <Route path="/line" element={<Line />} />
-                <Route path="/area" element={<Area />} />
-                <Route
-                  path="/colorapp"
-                  element={<ColorApp />}
-                />
-                <Route path="/blackboard" element={<BlackBoard />} />
-                <Route
-                  path="/projects"
-                  element={<Project />}
-                />
-                <Route
-                  path="/color-mapping"
-                  element={<ColorMapping />}
+                <Route path="/plasma" element={<Line />} />
+                <Route path="/algorithm" element={<Area />} />
+                <Route path="/colorapp" element={<ColorApp />} />
+                <Route path="/aigc" element={<BlackBoard />} />
+                <Route path="/projects" element={<Project />} />
+                <Route path="/color-mapping" element={<ColorMapping />}
                 />
                 <Route path="/pyramid" element={<Pyramid />} />
                 <Route path="/stacked" element={<Stacked />} />
-                <Route
-                  path="/colorapp/:id"
-                  element={<ColorDetails />}
-                ></Route>
+                <Route path="/colorapp/:id" element={<ColorDetails />} />
+                {/* 人员介绍页面 */}
+                <Route path="/orders" element={<Employees />} />
+                <Route path="/employees" element={<Employees />} />
+                <Route path="/customers" element={<Customers />} />
               </Routes>
             </div>
           </div>
         </div>
-
       </BrowserRouter >
-
     </loginContext.Provider>
-
-
-
   )
 }
 

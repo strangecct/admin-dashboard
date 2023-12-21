@@ -4,7 +4,8 @@ import {
     ContextMenu, Filter, Page, ExcelExport, PdfExport, Edit, Inject
 } from '@syncfusion/ej2-react-grids'
 
-import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy'
+import { ordersGrid } from '../data/dummy'
+import ordersData from "../data/teacher-info.json"
 import { Header } from '../components'
 
 const Orders = () => {

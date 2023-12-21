@@ -1,122 +1,120 @@
 import {
   AiOutlineCalendar,
-  AiOutlineShoppingCart,
-  AiOutlineAreaChart,
+
   AiOutlineBarChart,
   AiOutlineStock,
 } from "react-icons/ai";
 import {
   FiShoppingBag,
   FiEdit,
-  FiPieChart,
-  FiBarChart,
-  FiCreditCard,
-  FiStar,
-  FiShoppingCart,
+
 } from "react-icons/fi";
 import {
   BsKanban,
   BsBarChart,
-  BsBoxSeam,
-  BsCurrencyDollar,
-  BsShield,
-  BsChatLeft,
+
 } from "react-icons/bs";
-import { BiColorFill } from "react-icons/bi";
+import { BiColorFill, BiAngry } from "react-icons/bi";
 import { IoMdContacts } from "react-icons/io";
 import { RiContactsLine, RiStockLine } from "react-icons/ri";
-import { MdOutlineSupervisorAccount } from "react-icons/md";
-import { HiOutlineRefresh } from "react-icons/hi";
-import { TiTick } from "react-icons/ti";
 import { GiLouvrePyramid } from "react-icons/gi";
 
 export const links = [
   {
-    title: "Dashboard",
+    // title: "Dashboard",
+    category: "总览",
     links: [
       {
         name: "SDU",
+        key: "SDU",
         icon: <GiLouvrePyramid />,
       },
       {
-        name: "ecommerce",
-        icon: <FiShoppingBag />,
-      },
-    ],
-  },
-  {
-    title: "Funcs",
-    links: [
-      {
-        name: "line",
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: "area",
-        icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: "colorApp",
-        icon: <FiPieChart />,
-      },
-      // 动态路由组件
-      {
-        name: "blackboard",
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: "Projects",
-        icon: <RiStockLine />,
-      },
-      {
-        name: "color-mapping",
-        icon: <BsBarChart />,
-      },
-
-      {
-        name: "stacked",
-        icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
-  {
-    title: "Apps",
-    links: [
-      {
-        name: "calendar",
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: "kanban",
-        icon: <BsKanban />,
-      },
-      {
-        name: "editor",
-        icon: <FiEdit />,
-      },
-      {
-        name: "color-picker",
+        name: "风采展示",
+        key: "timeline",
         icon: <BiColorFill />,
       },
     ],
   },
   {
-    title: "Pages",
+    // title: "Funcs",
+    category: "研究方向",
     links: [
       {
-        name: "orders",
-        icon: <AiOutlineShoppingCart />,
+        name: "等离子体与生物医学",
+        key: "plasma",
+        icon: <AiOutlineStock />,
       },
       {
-        name: "employees",
-        icon: <IoMdContacts />,
+        name: "储能电池",
+        key: "battery",
+        icon: <AiOutlineBarChart />,
       },
       {
-        name: "customers",
-        icon: <RiContactsLine />,
+        name: "设备监测系统开发",
+        key: "colorApp",
+        icon: <BsBarChart />,
+      },
+      {
+        name: "故障诊断算法",
+        key: "algorithm",
+        icon: <AiOutlineBarChart />,
+      },
+      // 动态路由组件
+      {
+        name: "其他/项目",
+        key: "Projects",
+        icon: <RiStockLine />,
       },
     ],
   },
+  {
+    // title: "Apps",
+    category: "工具",
+    links: [
+      {
+        name: "故障实时监测",
+        key: "dashboard",
+        icon: <FiShoppingBag />,
+      },
+      {
+        name: "统计分析平台",
+        key: "calendar",
+        icon: <AiOutlineCalendar />,
+      },
 
+      {
+        name: "AIGC",
+        key: "aigc",
+        icon: <BsKanban />,
+      },
+      {
+        name: "ChatGPT",
+        key: "gpt",
+        icon: <FiEdit />,
+      },
+    ],
+  },
+  {
+    // title: "Pages",
+    category: "人员介绍",
+    links: [
+      {
+        name: "导师",
+        key: "orders",
+        icon: <BiAngry />,
+      },
+      {
+        name: "学生",
+        key: "employees",
+        icon: <RiContactsLine />,
+      },
+      {
+        name: "校友",
+        key: "customers",
+        icon: <IoMdContacts />,
+
+      },
+    ],
+  },
 ];

@@ -47,12 +47,12 @@ const Sidebar = () => {
                     {links.map(item => (
                         <div key={item.title}>
                             <p className='text-gray-400 m-3 mt-4 uppercase'>
-                                {item.title}
+                                {item.category}
                             </p>
                             {item.links.map(link => (
                                 <NavLink
-                                    to={`/${link.name.toLowerCase()}`}
-                                    key={link.name}
+                                    to={`/${link.key.toLowerCase()}`}
+                                    key={link.key}
                                     onClick={() => handleCloseSideBar()}
                                     style={({ isActive }) =>
                                         isActive ? { backgroundColor: currentColor } : {}

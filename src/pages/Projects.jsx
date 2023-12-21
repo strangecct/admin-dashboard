@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { BlackClass } from './Charts/BlackComponents'
 import { Header } from "../components";
 import Project from '../components/Project';
 import ProjectBlank from '../components/ProjectBlank';
@@ -14,11 +13,8 @@ const Projects = () => {
         }
       })
       setProjects(mock)
-      //console.log(mock)
     }, 500)
   }, [])
-
-
   const dom = useRef(null)
   const scrollTop = useRef(0)
   const handleScroll = () => {
@@ -42,14 +38,10 @@ const Projects = () => {
           projects.map((item, ind) =>
             (ind >= needRender && ind <= needRender + 7)
               ? <Project {...item} key={ind} /> : <ProjectBlank />
-
           )
-
-
         }
       </div>
     </div>
-
   )
 }
 

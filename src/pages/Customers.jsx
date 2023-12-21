@@ -1,7 +1,8 @@
 import React from 'react';
 import { GridComponent, ColumnsDirective, ColumnDirective, Page, Search, Selection, Inject, Edit, Toolbar, Sort, Filter } from '@syncfusion/ej2-react-grids';
 
-import { customersData, customersGrid } from '../data/dummy';
+import { customersGrid } from '../data/dummy';
+import { studentsData } from '../data/student-info/stduent-info';
 import { Header } from '../components';
 
 const Customers = () => {
@@ -15,7 +16,7 @@ const Customers = () => {
       <Header category="Page" title="Customers" />
       <p className='text-2xl font-semibold mt-2 mb-4 text-gray-300'>render with grid component of syncfusion</p>
       <GridComponent
-        dataSource={customersData}
+        dataSource={studentsData}
         allowPaging
         allowSorting
         toolbar={toolbarOptions}
