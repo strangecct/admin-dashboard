@@ -30,7 +30,7 @@ export const links = [
         icon: <GiLouvrePyramid />,
       },
       {
-        name: "风采展示",
+        name: "近期事件",
         key: "timeline",
         icon: <BiColorFill />,
       },
@@ -73,13 +73,18 @@ export const links = [
     category: "工具",
     links: [
       {
-        name: "故障实时监测",
+        name: "实时监测",
         key: "dashboard",
         icon: <FiShoppingBag />,
       },
       {
-        name: "统计分析平台",
-        key: "calendar",
+        name: "数据上传",
+        key: "upload",
+        icon: <FiShoppingBag />,
+      },
+      {
+        name: "数据统计分析",
+        key: "analysis",
         icon: <AiOutlineCalendar />,
       },
 
@@ -100,20 +105,14 @@ export const links = [
     category: "人员介绍",
     links: [
       {
-        name: "导师",
-        key: "orders",
-        icon: <BiAngry />,
-      },
-      {
-        name: "学生",
-        key: "employees",
-        icon: <RiContactsLine />,
-      },
-      {
-        name: "校友",
+        name: "成员简介",
         key: "customers",
         icon: <IoMdContacts />,
-
+      },
+      {
+        name: "人员管理",
+        key: "orders",
+        icon: <BiAngry />,
       },
     ],
   },

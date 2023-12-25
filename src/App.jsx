@@ -6,15 +6,14 @@ import ColorDetails from './pages/Charts/ColorComponents/ColorDetails'
 import { Navbar, Footer, Sidebar, ThemeSettings, Login } from './components'
 
 import {
-  Ecommerce,
-  Calendar,
+  Monitor,
+  Analysis,
   Employees,
   Stacked,
   Pyramid,
   Customers,
   Kanban,
   Area,
-  Pie,
   Project,
   ColorPicker,
   ColorMapping,
@@ -22,7 +21,8 @@ import {
   Line,
   ColorApp,
   BlackBoard,
-  Summary
+  Summary,
+  Upload
 } from './pages'
 import { useStateContext } from './contexts/ContextProvider'
 import './App.css'
@@ -43,9 +43,7 @@ const App = () => {
   return (
     <loginContext.Provider value={isLogin}>
       <BrowserRouter>
-        {/*<Routes>
-            <Route path="/login" element={<Login />} />
-          </Routes>*/}
+
         <div className={currentMode === 'Dark' ? 'dark' : ''}></div>
         <div className="flex relative dark:bg-main-dark-bg">
           {/* 右下角设置 */}
@@ -90,25 +88,31 @@ const App = () => {
                 <Route path="/sdu" element={<Summary />} />
                 <Route path="/timeline" element={<ColorPicker />} />
 
-                <Route path="/battery" element={<Kanban />} />
-                <Route path="/gpt" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
-                <Route path="/dashboard" element={<Ecommerce />} />
 
-                {/* Funcs */}
+                {/* 研究方向 */}
                 <Route path="/plasma" element={<Line />} />
-                <Route path="/algorithm" element={<Area />} />
+                <Route path="/battery" element={<Kanban />} />
                 <Route path="/colorapp" element={<ColorApp />} />
-                <Route path="/aigc" element={<BlackBoard />} />
+                <Route path="/colorapp/:id" element={<ColorDetails />} />
+                <Route path="/algorithm" element={<Area />} />
                 <Route path="/projects" element={<Project />} />
-                <Route path="/color-mapping" element={<ColorMapping />}
-                />
+
+                <Route path="/color-mapping" element={<ColorMapping />} />
                 <Route path="/pyramid" element={<Pyramid />} />
                 <Route path="/stacked" element={<Stacked />} />
-                <Route path="/colorapp/:id" element={<ColorDetails />} />
+
+
+                {/* 工具 */}
+                <Route path="/dashboard" element={<Monitor />} />
+                <Route path="/upload" element={<Upload />} />
+                <Route path="/analysis" element={<Analysis />} />
+                <Route path="/aigc" element={<BlackBoard />} />
+                <Route path="/gpt" element={<Editor />} />
+
+
+
                 {/* 人员介绍页面 */}
                 <Route path="/orders" element={<Employees />} />
-                <Route path="/employees" element={<Employees />} />
                 <Route path="/customers" element={<Customers />} />
               </Routes>
             </div>

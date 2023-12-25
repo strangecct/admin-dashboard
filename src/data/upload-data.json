@@ -1,0 +1,12 @@
+{
+  "id": "0001",
+  "object": "breaker",
+  "level": "72.5kV",
+  "information": "SF6",
+  "date": "2023-12-25",
+  "type": "vibration",
+  "experimenter": "caoshi",
+  "state": "normal",
+  "user": "qinzhe",
+  "data": "s"
+}
